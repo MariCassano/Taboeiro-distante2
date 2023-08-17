@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCM Astronomy</title>
+    <link rel="icon" type="image/png" href="favicon.ico.png">
+    <style>
+        body{
+            margin: 0;
+            justify-content: space-around;
+        }
+        h1{
+            text-align: center;
+            display: block;
+            margin: auto;
+            padding: 450px;
+            font-size: 80px;
+            color: #ffded2;
+        }
+.scene{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #000000;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.scene i{
+    position: absolute;
+    top: -250px;
+    background: rgba(255,255,255, 0.5);
+    animation: animateStars linear infinite;
+}
+@keyframes animateStars {
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(200vh);
+    }
+}
+    </style>
+</head>
+<body>
+  
+        <div class="scene">
+            <h1>Astronomy Curiosity</h1>
+            
+        
+        </div>
+    
+        <script>
+            function stars(){
+                let count = 150;
+                let scene = document.querySelector('.scene');
+                let i =0;
+                while(i < count){
+                    let star = document.createElement('i');
+                    let x = Math.floor(Math.random() * window.innerWidth);
+                    let duration = Math.random() * 1;
+                    let h = Math.random() * 100;
+        
+                    star.style.left = x + 'px';
+                    star.style.width = 1 + 'px';
+                    star.style.height = 60 + 'px';
+                    star.style.animationDuration = duration + 's';
+                    
+                    scene.appendChild(star);
+                    i++;
+                }
+            }
+            stars();
+        </script>
+    
+
+    
+</body>
+
+</html>
+	
